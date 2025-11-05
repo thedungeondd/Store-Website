@@ -381,6 +381,107 @@ main {
     transform: translateY(-2px);
 }
 
+/* Map Embed */
+.map-embed {
+    margin-top: 1rem;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.map-embed iframe {
+    display: block;
+    border-radius: 10px;
+}
+
+/* Reviews Section */
+.reviews-section {
+    padding: 60px 0;
+    background-color: var(--background-light);
+    margin-top: 2rem;
+}
+
+.reviews-section h3 {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 3rem;
+    font-size: 2rem;
+}
+
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.review-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.review-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+}
+
+.review-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.stars {
+    font-size: 1.2rem;
+    color: #ffd700;
+}
+
+.review-source {
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+    font-weight: bold;
+}
+
+.review-text {
+    font-style: italic;
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.review-author {
+    color: var(--secondary-color);
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+.reviews-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.review-link {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    padding: 12px 24px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: var(--transition);
+}
+
+.review-link:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
 /* Footer */
 .footer {
     background-color: var(--primary-color);
@@ -473,6 +574,21 @@ main {
     .contact-grid {
         grid-template-columns: 1fr;
         gap: 2rem;
+    }
+    
+    .reviews-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .reviews-links {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .review-link {
+        width: 100%;
+        max-width: 300px;
+        text-align: center;
     }
     
     .nav-logo h1 {
