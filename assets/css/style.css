@@ -66,11 +66,11 @@ a:hover {
     top: 0;
     width: 100%;
     z-index: 1000;
-    height: 70px;
+    height: 60px;
 }
 
 .navbar {
-    padding: 1rem 0;
+    padding: 0.75rem 0;
     height: 100%;
     display: flex;
     align-items: center;
@@ -83,7 +83,7 @@ a:hover {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
-    gap: 4rem;
+    gap: 2rem;
 }
 
 .nav-logo h1 {
@@ -95,7 +95,7 @@ a:hover {
 .nav-menu {
     display: flex;
     list-style: none;
-    gap: 3rem;
+    gap: 2rem;
 }
 
 .nav-link {
@@ -129,8 +129,8 @@ a:hover {
 
 /* Main Content */
 main {
-    margin-top: 70px; /* Account for fixed header */
-    min-height: calc(100vh - 70px);
+    margin-top: 60px; /* Account for fixed header */
+    min-height: calc(100vh - 60px);
 }
 
 /* Hero Section */
