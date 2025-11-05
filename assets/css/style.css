@@ -264,6 +264,97 @@ main {
     margin-bottom: 0.5rem;
 }
 
+/* Team Section */
+.team-section {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.team-section h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+
+.team-section p {
+    color: var(--text-dark);
+    margin-bottom: 3rem;
+    font-size: 1.1rem;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 3rem;
+    margin-top: 2rem;
+}
+
+.team-member {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.team-member:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.team-photo {
+    position: relative;
+    height: 250px;
+    overflow: hidden;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.team-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+/* Placeholder styling for missing images */
+.team-photo::before {
+    content: "👤";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 4rem;
+    color: rgba(255, 255, 255, 0.7);
+    z-index: 1;
+}
+
+.team-info {
+    padding: 2rem;
+    text-align: center;
+}
+
+.team-info h4 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    font-size: 1.3rem;
+}
+
+.team-info p {
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+.team-specialty {
+    color: var(--text-dark);
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
 /* Contact Page */
 .contact-content {
     padding: 80px 0;
@@ -404,8 +495,44 @@ main {
 .reviews-section h3 {
     text-align: center;
     color: var(--primary-color);
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
     font-size: 2rem;
+}
+
+/* Rating Highlight */
+.rating-highlight {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.overall-rating {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    border: 3px solid var(--accent-color);
+}
+
+.rating-number {
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    line-height: 1;
+}
+
+.rating-stars {
+    font-size: 1.5rem;
+    margin: 0.5rem 0;
+    color: #ffd700;
+}
+
+.rating-count {
+    font-size: 1.1rem;
+    color: var(--secondary-color);
+    font-weight: bold;
 }
 
 .reviews-grid {
@@ -480,6 +607,42 @@ main {
 .review-link:hover {
     background-color: var(--secondary-color);
     transform: translateY(-2px);
+}
+
+/* Instagram Section */
+.instagram-section {
+    background: var(--background-color);
+    padding: 80px 0;
+    text-align: center;
+}
+
+.instagram-section h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
+}
+
+.instagram-section p {
+    color: var(--text-dark);
+    margin-bottom: 3rem;
+    font-size: 1.2rem;
+}
+
+.instagram-embed {
+    max-width: 540px;
+    margin: 0 auto;
+}
+
+/* Social Links */
+.social-link {
+    color: var(--primary-color);
+    font-weight: bold;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.social-link:hover {
+    color: var(--secondary-color);
 }
 
 /* Footer */
