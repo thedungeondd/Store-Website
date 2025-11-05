@@ -291,6 +291,30 @@ main {
     margin-bottom: 0.5rem;
 }
 
+/* Contact Methods */
+.contact-methods {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.contact-method {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    border-left: 4px solid var(--accent-color);
+}
+
+.contact-method h4 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.contact-method p {
+    margin-bottom: 0;
+}
+
 /* Contact Form */
 .form-group {
     margin-bottom: 1.5rem;
@@ -335,6 +359,25 @@ main {
 
 .submit-btn:hover {
     background-color: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+/* Map Links */
+.map-link {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: var(--text-dark);
+    padding: 8px 16px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin: 2px 0;
+    font-weight: bold;
+    transition: var(--transition);
+}
+
+.map-link:hover {
+    background-color: var(--secondary-color);
+    color: var(--text-light);
     transform: translateY(-2px);
 }
 
