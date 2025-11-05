@@ -219,4 +219,4 @@ This project is open source. Feel free to use it as a template for your own smok
 
 **Made with ❤️ for The Dungeon Smoke Shop**
 
-*Last updated: November 2025*# Store-Website
+*Last updated: November 2025*
