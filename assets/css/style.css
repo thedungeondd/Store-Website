@@ -66,10 +66,14 @@ a:hover {
     top: 0;
     width: 100%;
     z-index: 1000;
+    height: 70px;
 }
 
 .navbar {
     padding: 1rem 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
 }
 
 .nav-container {
@@ -124,15 +128,15 @@ a:hover {
 
 /* Main Content */
 main {
-    margin-top: 80px; /* Account for fixed header */
-    min-height: calc(100vh - 80px);
+    margin-top: 70px; /* Account for fixed header */
+    min-height: calc(100vh - 70px);
 }
 
 /* Hero Section */
 .hero {
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     color: var(--text-light);
-    padding: 100px 0;
+    padding: 80px 0;
     text-align: center;
 }
 
@@ -205,7 +209,7 @@ main {
 .page-header {
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     color: var(--text-light);
-    padding: 60px 0;
+    padding: 40px 0;
     text-align: center;
 }
 
