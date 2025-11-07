@@ -268,7 +268,16 @@ function initializeSlideshow() {
     const prevButton = document.querySelector('.arrow-left');
     const nextButton = document.querySelector('.arrow-right');
 
+    console.log('Slideshow initialization:', {
+        slideshowContainer,
+        dotsContainer,
+        prevButton,
+        nextButton,
+        imageCount: galleryImages.length
+    });
+
     if (!slideshowContainer || !dotsContainer || !prevButton || !nextButton) {
+        console.error('Missing required elements for slideshow');
         return;
     }
 
@@ -293,6 +302,8 @@ function initializeSlideshow() {
         dot.addEventListener('click', () => showSlide(index));
         dotsContainer.appendChild(dot);
     });
+
+    console.log('Created', galleryImages.length, 'slides');
 
     // Add event listeners for arrow buttons
     prevButton.addEventListener('click', () => {
