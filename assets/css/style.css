@@ -550,18 +550,6 @@ main {
     transition: var(--transition);
 }
 
-/* Placeholder styling for missing images */
-.team-photo::before {
-    content: "👤";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 4rem;
-    color: rgba(255, 255, 255, 0.7);
-    z-index: 1;
-}
-
 .team-info {
     padding: 2rem;
     text-align: center;
