@@ -223,7 +223,9 @@ function formatPhoneNumber(phoneNumber) {
 
 // Gallery Slideshow Functionality
 let currentSlideIndex = 0;
+let slideshowTimer = null;
 const galleryImages = [
+    '../assets/images/Gallery/Products.jpg',
     '../assets/images/Gallery/IMG_4056.JPG',
     '../assets/images/Gallery/IMG_4057.JPG',
     '../assets/images/Gallery/IMG_4059.JPG',
@@ -307,19 +309,23 @@ function initializeSlideshow() {
 
     // Add event listeners for arrow buttons
     prevButton.addEventListener('click', () => {
+        stopAutoSlide();
         let newIndex = currentSlideIndex - 1;
         if (newIndex < 0) {
             newIndex = galleryImages.length - 1;
         }
         showSlide(newIndex);
+        startAutoSlide();
     });
 
     nextButton.addEventListener('click', () => {
+        stopAutoSlide();
         let newIndex = currentSlideIndex + 1;
         if (newIndex >= galleryImages.length) {
             newIndex = 0;
         }
         showSlide(newIndex);
+        startAutoSlide();
     });
 
     // Keyboard navigation support
@@ -334,6 +340,25 @@ function initializeSlideshow() {
     });
 
     showSlide(0); // Show the first slide initially
+    startAutoSlide(); // Start automatic slideshow
+}
+
+function startAutoSlide() {
+    stopAutoSlide(); // Clear any existing timer
+    slideshowTimer = setInterval(() => {
+        let newIndex = currentSlideIndex + 1;
+        if (newIndex >= galleryImages.length) {
+            newIndex = 0;
+        }
+        showSlide(newIndex);
+    }, 4000); // Change slide every 4 seconds
+}
+
+function stopAutoSlide() {
+    if (slideshowTimer) {
+        clearInterval(slideshowTimer);
+        slideshowTimer = null;
+    }
 }
 
 function showSlide(n) {
@@ -354,6 +379,15 @@ function showSlide(n) {
         dot.classList.toggle('active', index === n);
     });
 }
+
+// Pause slideshow when user hovers over it
+document.addEventListener('DOMContentLoaded', function() {
+    const slideshowCard = document.querySelector('.slideshow-card');
+    if (slideshowCard) {
+        slideshowCard.addEventListener('mouseenter', stopAutoSlide);
+        slideshowCard.addEventListener('mouseleave', startAutoSlide);
+    }
+});
 
 // Add animation CSS for notifications
 const style = document.createElement('style');
