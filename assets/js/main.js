@@ -325,7 +325,6 @@ function initializeSlideshow() {
     showSlide(0); // Show the first slide initially
 }
 
-
 function showSlide(n) {
     const slides = document.querySelectorAll('.slide');
     const dots = document.querySelectorAll('.slide-dot');
@@ -342,79 +341,6 @@ function showSlide(n) {
 
     dots.forEach((dot, index) => {
         dot.classList.toggle('active', index === n);
-    });
-}
-
-function initializeSlideshow() {
-    const imageElement = document.getElementById('slideshowImage');
-    const dotsContainer = document.getElementById('slideDots');
-    const prevButton = document.querySelector('.arrow-left');
-    const nextButton = document.querySelector('.arrow-right');
-
-    if (!imageElement || !dotsContainer || !prevButton || !nextButton) {
-        return;
-    }
-
-    // Build dot controls dynamically based on image list
-    dotsContainer.innerHTML = '';
-    galleryImages.forEach((_, index) => {
-        const dot = document.createElement('button');
-        dot.className = 'slide-dot';
-        dot.type = 'button';
-        dot.setAttribute('aria-label', `Go to slide ${index + 1}`);
-        dot.addEventListener('click', () => currentSlide(index + 1));
-        dotsContainer.appendChild(dot);
-    });
-
-    // Add event listeners for arrow buttons
-    prevButton.addEventListener('click', () => changeSlide(-1));
-    nextButton.addEventListener('click', () => changeSlide(1));
-
-    showSlide(currentSlideIndex);
-
-    // Keyboard navigation support
-    document.addEventListener('keydown', (event) => {
-        if (document.querySelector('.gallery-showcase')) { // Only run on gallery page
-            if (event.key === 'ArrowLeft') {
-                changeSlide(-1);
-            } else if (event.key === 'ArrowRight') {
-                changeSlide(1);
-            }
-        }
-    });
-}
-
-function changeSlide(n) {
-    currentSlideIndex += n;
-    
-    if (currentSlideIndex > galleryImages.length) {
-        currentSlideIndex = 1;
-    }
-    if (currentSlideIndex < 1) {
-        currentSlideIndex = galleryImages.length;
-    }
-    
-    showSlide(currentSlideIndex);
-}
-
-function currentSlide(n) {
-    currentSlideIndex = n;
-    showSlide(currentSlideIndex);
-}
-
-function showSlide(n) {
-    const imageElement = document.getElementById('slideshowImage');
-    const dots = document.querySelectorAll('.slide-dot');
-
-    if (!imageElement || dots.length === 0) {
-        return;
-    }
-
-    imageElement.src = galleryImages[n - 1];
-    imageElement.alt = `Gallery image ${n}`;
-
-    dots.forEach((dot, index) => {
-        dot.classList.toggle('active', index === n - 1);
     });
 }
 
